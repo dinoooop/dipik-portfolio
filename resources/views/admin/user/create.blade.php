@@ -4,7 +4,7 @@
 @section('content')
 
 <h1>Create User</h1>
-<form method="post" action="/users">
+<form method="post" action="/admin/users">
     @csrf
     <div class="form-group">
         <label for="name">Name:</label>

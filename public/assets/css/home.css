@@ -9,9 +9,11 @@
 }
 
 :root {
-    --color-1: rgb(119, 158, 255);
+    --color-1: rgb(0, 224, 249);
     --color-2: rgb(179, 200, 253);
     --bg-color: #152125;
+    --bg-color-2 : #052b38;
+    --bg-color-3 : #083847;
     --white: #ffffff;
     --black: #101b1e;
 }
@@ -42,10 +44,17 @@ a {
     color: var(--color-1);
 }
 
+h2 a { 
+    color: var(--white);
+}
 p {
-    font-weight: lighter;
+    font-size: 12px;
+    line-height: 22px;
 }
 
+h1 {
+    margin-bottom: 2rem;
+}
 h3 {
     font-size: 4rem;
     text-transform: uppercase;
@@ -310,3 +319,38 @@ nav a:hover {
     width: 62%;
 }
 
+.pockets {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    
+}
+
+.pocket {
+    border-radius: 1rem;
+    overflow: hidden;
+    width: 25vw;
+    margin-bottom: 2rem;
+    background-color: var(--bg-color-2);
+    min-height: 89vh;
+}
+
+.pocket .thumb img{   
+    width: 100%; 
+}
+
+.pocket .details{
+    
+    padding: 1rem;
+}
+
+.pocket .details .time {
+    color: aqua;
+    padding: 1rem 0;
+    font-size: 0.8rem;
+}
+
+.blog-header {
+    background-color: var(--bg-color-2);
+}

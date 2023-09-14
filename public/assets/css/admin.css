@@ -1,3 +1,36 @@
+@font-face {
+    font-family: poppins_regular;
+    src: url(../fonts/Poppins-Regular.otf);
+}
+
+:root {
+    --color-1: #1c001a;
+    --color-2: #31022e;
+    --color-3: #51024a;
+    --color-4: #75046c;
+    --white: #ededed;
+    --black: #1c001a;
+    --border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    border: 0;
+    outline: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+    background-color: var(--color-1);
+    color: var(--white);
+    letter-spacing: 0.05rem;
+    font-family: poppins_regular;
+    font-size: 0.7rem;
+}
+
 .container {
     display: flex;
     align-items: start;
@@ -24,18 +57,21 @@ main {
 }
 
 aside {
-    background-color: #2a0145;
+    background-color: var(--color-2);
     height: 100vh;
-    font-size: 1rem;
     line-height: 0.8rem;
     overflow-y: auto;
     overflow-x: hidden;
     flex: 1.2;
+
 }
 
-aside li {
-    margin-top: 1rem;
-    padding: 0.5rem 1rem;
+aside li a {
+    display: block;
+    padding: 1rem;
+    color: var(--white);
+    border-bottom: var(--border);
+    font-size: 0.6rem;
 }
 
 .cardbody {
@@ -45,34 +81,76 @@ aside li {
 }
 
 .form-group {
-    margin: 1rem 0;
+    margin: 2rem 0;
 }
 
 .form-group label {
-    display: inline-block;
-    width: 5rem;
+    display: block;
 }
 
 .form-group input {
-    padding: 0.5rem 1rem;
-    border-radius: 0.1rem;
+    width: 100%;
+    margin-top: 0.5rem;
+    padding: 1rem;
+    border-radius: 0.3rem;
 }
 
 button[type="submit"] {
-    padding: 0.5rem 1rem;
+    padding: 1rem 2rem;
+    border-radius: 0.3rem;
 }
 
 table {
     border-collapse: collapse;
+    width: 100%;
 }
 
 th {
     padding: 2rem;
-    text-align: right;
-    border: 1px solid #FFF;
+    border: var(--border);
 }
 
 td {
     padding: 1rem;
-    border: 1px solid #FFF;
+    border: var(--border);
+}
+
+.form-group textarea {
+    min-height: 15rem;
+    width: 100%;
+    margin-top: 0.5rem;
+    padding: 1rem;
+    border-radius: 0.3rem;
+}
+
+.btn {
+    padding: 0.5rem 0.8rem;
+    background-color: var(--color-3);
+    display: inline-block;
+    color: var(--white);
+    border-radius: 0.3rem;
+    transition: all ease-in 0.3s;
+
+}
+
+.btn:hover {
+    background-color: var(--color-4);
+}
+
+.table-top {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 0.3rem;
+    padding: 0.5rem 0;
+}
+
+.table-top .form-group {
+    margin: 0;
+}
+
+.table-top .form-group input {
+    width: 15rem;
+    margin-top: 0;
+    padding: 0.5rem;
 }

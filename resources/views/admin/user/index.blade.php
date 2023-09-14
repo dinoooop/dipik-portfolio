@@ -17,7 +17,7 @@
         <tr>
             <td>{{$user['name']}}</td>
             <td>{{$user['email']}}</td>
-            <td><a href="/users/{{$user['id']}}/edit">Edit</a></td>
+            <td><a href="/admin/users/{{$user['id']}}/edit">Edit</a></td>
         </tr>
         @endforeach
     </tbody>

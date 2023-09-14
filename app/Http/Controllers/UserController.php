@@ -8,22 +8,22 @@ use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
-    
+
     public function index(Request $request)
     {
         $users = User::all();
-        return view('user.index', ['users' => $users]);
+        return view('admin.user.index', ['users' => $users]);
     }
 
     public function edit($id)
     {
         $user = User::find($id);
-        return view('user.edit', ['user' => $user]);
+        return view('admin.user.edit', ['user' => $user]);
     }
 
     public function create()
     {
-        return view('user.create');
+        return view('admin.user.create');
     }
 
     public function store(Request $request)
@@ -35,7 +35,7 @@ class UserController extends Controller
 
         $validated['password'] = Hash::make('welcome');
         $user = User::create($validated);
-        return redirect('/users');
+        return redirect('/admin/users');
     }
 
     public function update(Request $request, $id)
@@ -46,6 +46,6 @@ class UserController extends Controller
         ]);
 
         $user = User::find($id)->update($validated);
-        return redirect('/users/' . $id . '/edit');
+        return redirect('/admin/users/' . $id . '/edit');
     }
 }

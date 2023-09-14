@@ -4,7 +4,7 @@
 @section('content')
 
 <h1>Edit User</h1>
-<form method="post" action="/users/{{$user->id}}">
+<form method="post" action="/admin/users/{{$user->id}}">
     @csrf
     @method('PUT')
     <div class="form-group">

@@ -1,41 +1,6 @@
-@media (max-width: 576px) {
+@media (max-width: 1400px) {}
 
-    .contact textarea {
-        width: 80vw;
-    }
-    .contact input, textarea {
-        width: 80vw;
-    }
-
-
-    .hero-text h2 {
-        font-size: 5rem;
-    }
-
-    p.subtitle {
-        padding: 2rem;
-    }
-
-    h3 {
-        font-size: 3rem;
-    }
-
-    h4 {
-        font-size: 1.5rem;
-
-    }
-
-    .card .thumb {
-        display: none;
-    }
-}
-
-
-@media (max-width: 768px) {
-
-    
-}
-
+@media (max-width: 1200px) {}
 
 @media (max-width: 992px) {
     /* Navigation --------------------*/
@@ -88,10 +53,50 @@
     }
 
     /* Navigation --------------------*/
+
+    .pocket {
+        width: 38vw;
+    }
 }
 
 
-@media (max-width: 1200px) {}
+@media (max-width: 768px) {
+
+    
+}
+
+@media (max-width: 576px) {
+
+    .contact textarea {
+        width: 80vw;
+    }
+    .contact input, textarea {
+        width: 80vw;
+    }
 
 
-@media (max-width: 1400px) {}
+    .hero-text h2 {
+        font-size: 5rem;
+    }
+
+    p.subtitle {
+        padding: 2rem;
+    }
+
+    h3 {
+        font-size: 3rem;
+    }
+
+    h4 {
+        font-size: 1.5rem;
+
+    }
+
+    .card .thumb {
+        display: none;
+    }
+
+    .pocket {
+        width: 90vw;
+    }
+}

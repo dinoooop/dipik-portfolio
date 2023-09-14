@@ -1,8 +1,15 @@
 <?php
 
-use App\Http\Controllers\AuthController;
-use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\TestController;
+use App\Http\Controllers\GeneralController;
+use App\Http\Controllers\ExperienceController;
+use App\Http\Controllers\StoryController;
+use App\Http\Controllers\WorkController;
+use App\Http\Controllers\UploadController;
+use App\Models\Upload;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,17 +22,28 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+// Route::get('/', function () {
+//     return view('home');
+// });
+
+Route::get('/', [GeneralController::class, 'home']);
+Route::get('/blogs', [GeneralController::class, 'blogs']);
+Route::get('/test', [TestController::class, 'test']);
 
 Route::group(['middleware' => ['auth']], function () {
-    Route::resource('users', UserController::class);
-    Route::controller(AuthController::class)->group(function () {
-        Route::get('/logout', 'logout');
-        
+    Route::resource('admin/users', UserController::class);
+    Route::resource('admin/experiences', ExperienceController::class);
+    Route::resource('admin/stories', StoryController::class);
+    Route::resource('admin/works', WorkController::class);
+    Route::resource('admin/uploads', UploadController::class);
+    Route::get('/logout', [AuthController::class, 'logout']);
+
+    Route::controller(GeneralController::class)->group(function () {
+        Route::get('/admin/story', 'story');
+        Route::post('/admin/story', 'store');
     });
 });
+
 Route::controller(AuthController::class)->group(function () {
     Route::get('/login', 'login')->name('login');
     Route::post('/authenticate', 'authenticate');

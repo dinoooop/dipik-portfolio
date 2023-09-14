@@ -5,26 +5,8 @@
 @section('content')
 <section class="home" id="home">
 
-    <div class="header  wrapper" id="myHeader">
-        <div class="logo">
-            <a href="{{ asset('/') }}">
-                <img src="{{ asset('assets/images/logo.png') }}" alt="dipik">
-            </a>
-        </div>
+    @include('templates.nav')
 
-
-
-        <nav>
-            <div class="menu" onclick="myFunction()">[=]</div>
-            <div class="topnav" id="myTopnav" onclick="handleNavLinkClick()">
-                <a href="#story">Story</a>
-                <a href="#work">Works</a>
-                <a href="#experience">Experience</a>
-                <a href="#contact">Contact</a>
-                <a href="#blog">Blogs</a>
-            </div>
-        </nav>
-    </div>
 
     <div class="hero-text wrapper">
         <h2>Hi, I am <span>Dinoop</span></h2>
@@ -32,11 +14,10 @@
     </div>
 </section>
 
-<section class="story artboard" id="story">
+<section class="story artboard" id="nav-stick-time">
     <div class="wrapper">
         <h3>Story</h3>
-        <p class="subtitle">I am passionate in branding and web development.
-            For me building an interactive application is fun. It helps me to pursuit for new technologies which make things easier. in order to meet varieties of requirements, I am on keep learning. </p>
+        <p class="subtitle"><?php echo $story; ?></p>
     </div>
 </section>
 <section class="work bgtext artboard" id="work">
@@ -105,6 +86,7 @@
                     <strong>Email</strong>
                     <input type="email" id="email" name="email" required />
                 </div>
+
                 <div for="message">
                     <strong>Message</strong>
                     <textarea name="message" required></textarea>
@@ -116,35 +98,6 @@
     </div>
 </section>
 
-<footer>
-    <p>&#169; 2023 DIPIK. All rights reserved.</p>
-</footer>
+@include('templates.footer')
 
-<script>
-    var topNav = document.getElementById("myTopnav");
-
-    function myFunction() {
-        if (topNav.className === "topnav") {
-            topNav.className += " responsive";
-        } else {
-            topNav.className = "topnav";
-        }
-    }
-
-    function handleNavLinkClick() {
-        topNav.className = "topnav";
-    }
-
-    var header = document.getElementById("myHeader");
-    var story = document.getElementById("story");
-    var sticky = story.offsetTop;
-    console.log(sticky);
-    window.onscroll = function() {
-        if (window.pageYOffset > sticky) {
-            header.classList.add("sticky");
-        } else {
-            header.classList.remove("sticky");
-        }
-    };
-</script>
 @endsection
