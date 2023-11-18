@@ -11,6 +11,11 @@
     <div class="container">
         <aside class="sidenav">
             <ul>
+                <li><a href="/admin/profiles">
+                        <i class="fa-solid fa-book-open-reader"></i>
+                        <span>Profiles</span>
+                    </a>
+                </li>
                 <li><a href="/admin/stories">
                         <i class="fa-solid fa-book-open-reader"></i>
                         <span>Stories</span>
@@ -19,6 +24,11 @@
                 <li><a href="/admin/works">
                         <i class="fa-solid fa-briefcase"></i>
                         <span>Works</span>
+                    </a>
+                </li>
+                <li><a href="/admin/uploads">
+                        <i class="fa-solid fa-briefcase"></i>
+                        <span>Uploads</span>
                     </a>
                 </li>
                 <li><a href="/admin/experiences">

@@ -10,7 +10,7 @@
 
 :root {
     --color-1: rgb(0, 224, 249);
-    --color-2: rgb(179, 200, 253);
+    --color-2: rgb(148, 244, 255);
     --bg-color: #152125;
     --bg-color-2 : #052b38;
     --bg-color-3 : #083847;
@@ -48,9 +48,11 @@ h2 a {
     color: var(--white);
 }
 p {
-    font-size: 12px;
-    line-height: 22px;
+    font-size: 16px;
+    line-height: 25px;
+    font-weight: normal;
 }
+
 
 h1 {
     margin-bottom: 2rem;
@@ -93,6 +95,7 @@ h4 {
 
 .hero-text p {
     font-size: 3rem;
+    line-height: 50px;
 }
 
 .story {
@@ -268,7 +271,7 @@ button:hover {
 
 .address {
     font-size: 1.5rem;
-    margin-bottom: 1rem;
+    margin: 0.5rem 0;
 }
 
 footer {

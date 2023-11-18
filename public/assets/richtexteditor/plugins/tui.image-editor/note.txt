@@ -3,3 +3,9 @@ tui.image-editor
 MIT License
 
 https://github.com/nhn/tui.image-editor/
+
+
+set prefix
+open appserceProvider class in boot function write
+DB::setTablePrefix('pf_');
+then run php artisan migrate table with new prefix will be created

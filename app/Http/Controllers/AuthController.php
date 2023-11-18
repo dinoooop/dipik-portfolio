@@ -11,6 +11,9 @@ class AuthController extends Controller
 {
     public function login(Request $request)
     {
+        if (Auth::check()) {
+            return redirect('admin/profiles');
+        }
         return view('auth.login');
     }
 
@@ -23,7 +26,7 @@ class AuthController extends Controller
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()->intended('users');
+            return redirect()->intended('admin/profiles');
         }
 
         return back()->withErrors([
@@ -60,7 +63,7 @@ class AuthController extends Controller
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()->intended('users');
+            return redirect()->intended('admin/profiles');
         }
     }
 
@@ -68,7 +71,7 @@ class AuthController extends Controller
     {
 
         if (Auth::check()) {
-            return redirect('/users');
+            return redirect('admin/profiles');
         }
 
         return view('auth.register');

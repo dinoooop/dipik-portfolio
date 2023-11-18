@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Upload;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 
 class UploadController extends Controller
 {
@@ -13,13 +14,15 @@ class UploadController extends Controller
     {
         $query = Upload::query();
         $query->orderBy('id', 'desc');
-        $data['uploads'] = $query->paginate();
+        $data['uploads'] = $query->paginate(2);
+        $data['page'] = $request->page?? 1;
         return view('admin.upload.index', ['data' => $data]);
     }
 
     public function edit($id)
     {
         $data = Upload::find($id);
+        
         return view('admin.upload.edit', ['data' => $data]);
     }
 
@@ -46,17 +49,32 @@ class UploadController extends Controller
     public function update(Request $request, $id)
     {
         $validated = $request->validate([
-            'url' => 'required',
+            'url' => 'required|file',
             'url_two' => 'sometimes',
         ]);
 
-        $data = Upload::find($id)->update($validated);
+        $model = Upload::find($id);
+
+        $fileToDelete = 'public/uploads/' . $model->url;
+        if (Storage::exists($fileToDelete)) {
+            Storage::delete($fileToDelete);
+        }        
+
+        $url = $request->file('url')->store('public/uploads');
+        $validated['url'] = basename($url);
+
+        $data = $model->update($validated);
         return redirect('/admin/uploads');
     }
 
     public function destroy(Request $request, $id)
     {
-        $data = Upload::find($id)->delete();
+        $model = Upload::find($id);
+        $fileToDelete = 'public/uploads/' . $model->url;
+        if (Storage::exists($fileToDelete)) {
+            Storage::delete($fileToDelete);
+        }  
+        $data = $model->delete();
         return response()->json($data);
     }
 }

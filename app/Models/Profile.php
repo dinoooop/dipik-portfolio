@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Experience extends Model
+class Profile extends Model
 {
 
 
@@ -14,7 +14,11 @@ class Experience extends Model
      * @var array
      */
     protected $fillable = [
-        'title', 'address', 'content', 'duration',
+        'title', 
+        'story', 
+        'work',
+        'experience',
+        'status',
     ];
 
    

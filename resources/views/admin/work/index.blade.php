@@ -1,9 +1,9 @@
 @extends('layouts.sidenav')
-@section('title', 'Experiences')
+@section('title', 'Works')
 
 @section('content')
 
-<h1>Experiences</h1>
+<h1>Works</h1>
 
 <div class="table-top">
     <div class="form-group">

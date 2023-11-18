@@ -88,11 +88,15 @@ aside li a {
     display: block;
 }
 
-.form-group input {
+.form-group input{
     width: 100%;
     margin-top: 0.5rem;
     padding: 1rem;
     border-radius: 0.3rem;
+}
+
+.form-group input[type="checkbox"]{
+    width: 2%;
 }
 
 button[type="submit"] {
@@ -153,4 +157,65 @@ td {
     width: 15rem;
     margin-top: 0;
     padding: 0.5rem;
+}
+
+/* Pagination container */
+/* Pagination container */
+ul.pagination {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin-top: 17px;
+}
+
+/* Pagination list items */
+ul.pagination li {
+    margin: 0 5px;
+}
+
+/* Pagination links */
+ul.pagination li a {
+    text-decoration: none;
+    padding: 8px 16px;
+    color: #333;
+    background-color: #fff;
+    transition: background-color 0.3s;
+    border-radius: 5px;
+}
+
+/* Active page link */
+ul.pagination li a.active {
+    background-color: var(--color-3);
+    color: #fff;
+    border-radius: 5px;
+}
+
+/* Hover effect for links */
+ul.pagination li a:hover {
+    background-color: var(--color-4);
+    color: #fff;
+}
+
+/* Ellipsis style */
+ul.pagination .ellipsis {
+    font-weight: bold;
+    margin: 0 5px;
+}
+
+/* More button style */
+ul.pagination .more-button {
+    background-color: #007bff;
+    color: #fff;
+    border: 1px solid #007bff;
+    padding: 8px 16px;
+    text-align: center;
+    cursor: pointer;
+}
+
+/* More button hover effect */
+ul.pagination .more-button:hover {
+    background-color: #0056b3;
+    border: 1px solid #0056b3;
 }

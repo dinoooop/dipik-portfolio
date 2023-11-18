@@ -15,9 +15,12 @@
 </section>
 
 <section class="story artboard" id="nav-stick-time">
-    <div class="wrapper">
-        <h3>Story</h3>
-        <p class="subtitle"><?php echo $story; ?></p>
+    <div class="wrapper" id="story">
+        @if(isset($story->title))
+        <h3>{{ $story->title }}</h3>
+        <p class="subtitle"><?php echo $story->content; ?></p>
+        @endif
+        
     </div>
 </section>
 <section class="work bgtext artboard" id="work">
@@ -26,9 +29,9 @@
         <p class="subtitle">Made with fun</p>
 
         <div class="work-tile">
-            <a href="#" class="tile ripple">TIMLOG</a>
-            <a href="#" class="tile"></a>
-            <a href="#" class="tile"></a>
+            @foreach($works as $key => $work)
+            <a href="#" class="tile ripple">{{ $work->title }}</a>
+            @endforeach
         </div>
     </div>
 </section>
@@ -38,33 +41,16 @@
         <p class="subtitle">Listing my industrial connections</p>
 
         <div class="cards">
+            @foreach($experiences as $key => $experience)
             <div class="card">
-                <div class="thumb">2016 - 18</div>
+                <div class="thumb">{{ $experience->duration }}</div>
                 <div class="details">
-                    <h4>Spark Support Pvt. Ltd</h4>
-                    <p class="address">Infopark, Kochi, India</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, cumque! Doloribus, dolores. Deserunt id facere debitis nisi dicta quisquam distinctio asperiores, non eaque ab voluptatem et esse eius! Recusandae, vero?</p>
+                    <h4>{{ $experience->title }}</h4>
+                    <p class="address">{{ $experience->address }}</p>
+                    <p>{{ $experience->content }}</p>
                 </div>
             </div>
-
-            <div class="card">
-                <div class="thumb">2014 - 16</div>
-                <div class="details">
-                    <h4>Neolink Technologies</h4>
-                    <p class="address">Infopark TBC, Kochi, India</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, cumque! Doloribus, dolores. Deserunt id facere debitis nisi dicta quisquam distinctio asperiores, non eaque ab voluptatem et esse eius! Recusandae, vero?</p>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="thumb">2012 - 14</div>
-                <div class="details">
-                    <h4>Green I Solutions</h4>
-                    <p class="address">Kakkanad, Kochi, India</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, cumque! Doloribus, dolores. Deserunt id facere debitis nisi dicta quisquam distinctio asperiores, non eaque ab voluptatem et esse eius! Recusandae, vero?</p>
-                </div>
-            </div>
-
+            @endforeach
         </div>
 
 
@@ -74,8 +60,9 @@
     <div class="wrapper">
         <h3>Contact</h3>
         <p class="subtitle">Lets do something together</p>
-
-        <form action="https://formspree.io/f/moqbgwzj" method="post">
+        <!-- https://formspree.io/f/moqbgwzj -->
+        <form action="/contact" method="post">
+            @csrf
             <div class="form-element">
                 <div for="name">
                     <strong>Name</strong>

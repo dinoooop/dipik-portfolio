@@ -12,6 +12,10 @@
         <input name="title" type="text" id="title" value="{{ $data->title }}" />
     </div>
     <div class="form-group">
+        <label for="address">Address:</label>
+        <input name="address" type="text" id="address" value="{{ $data->address }}" />
+    </div>
+    <div class="form-group">
         <label for="content">Content:</label>
         <textarea name="content" id="content">{{ $data->content }}</textarea>
     </div>

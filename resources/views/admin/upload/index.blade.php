@@ -37,4 +37,45 @@
     </tbody>
 </table>
 
+
+
+
+
+
+{{-- Base URL --}}
+@php
+    $base_url = url('admin/uploads');
+    $current_page = $data['page'];
+    $total_pages = $data['uploads']->lastPage();
+@endphp
+
+
+<ul class="pagination">
+    @if ($current_page > 1)
+        <li><a href="{{ $base_url }}?page={{ $current_page - 1 }}">prev</a></li>
+    @endif
+
+    @for ($i = 1; $i <= $total_pages; $i++)
+        @if ($i == $current_page)
+            <li><a href="{{ $base_url }}?page={{ $i }}" class="active">{{ $i }}</a></li>
+        @elseif (
+            $i == 1 || $i == $total_pages || // Always show the first and last pages
+            $i == $current_page || // Show the current page
+            abs($i - $current_page) <= 1 || // Show pages within one step of the current page
+            ($i == 2 && $current_page > 4) || // Show the second page if the current page is far enough
+            ($i == $total_pages - 1 && $current_page < $total_pages - 3) // Show the second-to-last page if the current page is far enough
+        )
+            <li><a href="{{ $base_url }}?page={{ $i }}">{{ $i }}</a></li>
+        @elseif ($i == 3 && $current_page > 4)
+            <span class="ellipsis">...</span>
+        @elseif ($i == $total_pages - 2 && $current_page < $total_pages - 3)
+            <span class="ellipsis">...</span>
+        @endif
+    @endfor
+
+    @if ($current_page < $total_pages)
+        <li><a href="{{ $base_url }}?page={{ $current_page + 1 }}">Next</a></li>
+    @endif
+</ul>
+
 @endsection

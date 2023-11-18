@@ -21,6 +21,29 @@ $(document).ready(function () {
 
     });
 
+
+    // activate profile
+    $('.change-status').click(function () {
+        var modelEndPoint = $(this).data('model-end-point');
+        var modelId = $(this).data('model-id');
+        var currentStatus = $(this).data('current-status');
+        var csrfToken = $('meta[name="csrf-token"]').attr('content'); // Retrieve CSRF token from a meta tag
+
+        $.ajax({
+            url: '/admin/' + modelEndPoint + '/' + modelId,
+            type: 'PUT',
+            headers: {
+                'X-CSRF-Token': csrfToken
+            },
+            data: {
+                action: 'change_status'
+            },
+            success: function (response) { },
+            error: function (xhr, status, error) { }
+        });
+
+    });
+
 });
 
 

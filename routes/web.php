@@ -9,6 +9,7 @@ use App\Http\Controllers\ExperienceController;
 use App\Http\Controllers\StoryController;
 use App\Http\Controllers\WorkController;
 use App\Http\Controllers\UploadController;
+use App\Http\Controllers\ProfileController;
 use App\Models\Upload;
 
 /*
@@ -29,6 +30,7 @@ use App\Models\Upload;
 Route::get('/', [GeneralController::class, 'home']);
 Route::get('/blogs', [GeneralController::class, 'blogs']);
 Route::get('/test', [TestController::class, 'test']);
+Route::post('/contact', [GeneralController::class, 'contact']);
 
 Route::group(['middleware' => ['auth']], function () {
     Route::resource('admin/users', UserController::class);
@@ -36,6 +38,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('admin/stories', StoryController::class);
     Route::resource('admin/works', WorkController::class);
     Route::resource('admin/uploads', UploadController::class);
+    Route::resource('admin/profiles', ProfileController::class);
     Route::get('/logout', [AuthController::class, 'logout']);
 
     Route::controller(GeneralController::class)->group(function () {

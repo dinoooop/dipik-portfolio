@@ -13,10 +13,9 @@ class TestController extends Controller
     public function test(Request $request)
     {
 
-        $user = User::find(1)->update([
-            'tele' => '253 636',
-            'email' => 'john@mail101.com'
-        ]);
+        
+        $data = expForWhereIn('11');
+        dd($data);
 
     }
 }

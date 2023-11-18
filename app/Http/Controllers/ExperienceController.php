@@ -30,6 +30,7 @@ class ExperienceController extends Controller
     {
         $validated = $request->validate([
             'title' => 'required',
+            'address' => 'required',
             'content' => 'required',
             'duration' => 'required',
         ]);
@@ -42,6 +43,7 @@ class ExperienceController extends Controller
     {
         $validated = $request->validate([
             'title' => 'required',
+            'address' => 'required',
             'content' => 'required',
             'duration' => 'required',
         ]);
