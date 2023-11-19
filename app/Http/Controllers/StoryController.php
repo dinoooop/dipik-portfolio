@@ -12,18 +12,18 @@ class StoryController extends Controller
     public function index(Request $request)
     {
         $data = Story::all();
-        return view('admin.stories.index', ['data' => $data]);
+        return view('admin.story.index', ['data' => $data]);
     }
 
     public function edit($id)
     {
         $data = Story::find($id);
-        return view('admin.stories.edit', ['data' => $data]);
+        return view('admin.story.edit', ['data' => $data]);
     }
 
     public function create()
     {
-        return view('admin.stories.create');
+        return view('admin.story.create');
     }
 
     public function store(Request $request)

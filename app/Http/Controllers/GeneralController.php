@@ -55,7 +55,7 @@ class GeneralController extends Controller
     public function story(Request $request)
     {
         $story = Option::get('story');
-        return view('admin.generals.story', [
+        return view('admin.general.story', [
             'story' => $story
         ]);
     }
