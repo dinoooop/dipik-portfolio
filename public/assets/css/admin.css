@@ -84,7 +84,7 @@ aside li a {
     margin: 2rem 0;
 }
 
-.form-group label {
+.form-group > label {
     display: block;
 }
 
@@ -96,6 +96,10 @@ aside li a {
 }
 
 .form-group input[type="checkbox"]{
+    width: 2%;
+}
+
+.form-group input[type="radio"]{
     width: 2%;
 }
 

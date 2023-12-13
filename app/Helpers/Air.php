@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
+
 /**
  * 
  * Create directory in public with permission 0755
@@ -26,4 +28,14 @@ function expForWhereIn($param): array
         $data[] = intval($value);
     }
     return $data;
+}
+
+/**
+ * 
+ * 
+ * get current user id
+ */
+function gcuid()
+{
+    return Auth::user()->id;
 }

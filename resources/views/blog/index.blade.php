@@ -20,7 +20,7 @@
                     </a>
                 </div>
                 <div class="details">
-                    <h2><a href="/sample">The Font, Helvetica </a></h2>
+                    <h2><a href="the-font-helvetica">The Font, Helvetica</a></h2>
                     <p class="time">Jun 26, 2023 | JS, Laravel</p>
                     <p>Index funds have gained popularity in the world of investing, offering a simple and effective way for individuals to participate in the stock market.</p>
                 </div>

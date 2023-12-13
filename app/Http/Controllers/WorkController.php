@@ -30,6 +30,7 @@ class WorkController extends Controller
     {
         $validated = $request->validate([
             'title' => 'required',
+            'url' => 'sometimes',
             'content' => 'required',
             'image' => 'required',
         ]);
@@ -42,6 +43,7 @@ class WorkController extends Controller
     {
         $validated = $request->validate([
             'title' => 'required',
+            'url' => 'sometimes',
             'content' => 'required',
             'image' => 'required',
         ]);

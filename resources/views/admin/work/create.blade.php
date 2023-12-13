@@ -11,6 +11,10 @@
         <input name="title" type="text" id="title" />
     </div>
     <div class="form-group">
+        <label for="url">URL:</label>
+        <input name="url" type="text" id="url" />
+    </div>
+    <div class="form-group">
         <label for="content">Content:</label>
         <textarea name="content" id="content"></textarea>
     </div>

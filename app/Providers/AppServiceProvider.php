@@ -24,6 +24,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        DB::setTablePrefix('pf_');
+        $prefix = config('database.connections.mysql.prefix');
+        DB::setTablePrefix($prefix);
     }
 }

@@ -16,6 +16,11 @@
                         <span>Profiles</span>
                     </a>
                 </li>
+                <li><a href="/admin/blogs">
+                        <i class="fa-solid fa-book-open-reader"></i>
+                        <span>Blogs</span>
+                    </a>
+                </li>
                 <li><a href="/admin/stories">
                         <i class="fa-solid fa-book-open-reader"></i>
                         <span>Stories</span>

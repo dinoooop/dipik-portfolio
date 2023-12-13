@@ -30,7 +30,7 @@
 
         <div class="work-tile">
             @foreach($works as $key => $work)
-            <a href="#" class="tile ripple">{{ $work->title }}</a>
+            <a href="{{ $work->url }}" target="_blank" class="tile ripple">{{ $work->title }}</a>
             @endforeach
         </div>
     </div>

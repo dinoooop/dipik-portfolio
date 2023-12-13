@@ -10,6 +10,7 @@ use App\Http\Controllers\StoryController;
 use App\Http\Controllers\WorkController;
 use App\Http\Controllers\UploadController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\BlogController;
 use App\Models\Upload;
 
 /*
@@ -39,6 +40,9 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('admin/works', WorkController::class);
     Route::resource('admin/uploads', UploadController::class);
     Route::resource('admin/profiles', ProfileController::class);
+    Route::resource('admin/blogs', BlogController::class);
+    Route::get('blogs', [BlogController::class, 'blogs']);
+    Route::get('blogs/{slug}', [BlogController::class, 'single']);
     Route::get('/logout', [AuthController::class, 'logout']);
 
     Route::controller(GeneralController::class)->group(function () {

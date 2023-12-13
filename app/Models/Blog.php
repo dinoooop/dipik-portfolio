@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Work extends Model
+class Blog extends Model
 {
 
 
@@ -14,8 +14,11 @@ class Work extends Model
      * @var array
      */
     protected $fillable = [
-        'title', 'url', 'content', 'image',
+        'title',
+        'content',
+        'user_id',
+        'slug',
+        'image',
+        'status',
     ];
-
-   
 }
