@@ -16,14 +16,7 @@ class TestController extends Controller
     {
 
         
-        // echo config('database.connections.mysql.prefix');
-        // $dbackObj = new Dback();
-        // $dbackObj->printer();
-        $latestSqlFile = storage_path('app/dback/2023-11-22-07-35-08.sql');
-        if (Storage::exists('dback/2023-11-22-07-35-08.sql')) {
-            // The file exists in the storage directory
-            echo "File exists!";
-        }
+       echo getImageById(1);
 
     }
 }

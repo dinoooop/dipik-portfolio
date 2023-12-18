@@ -12,12 +12,12 @@
         <aside class="sidenav">
             <ul>
                 <li><a href="/admin/profiles">
-                        <i class="fa-solid fa-book-open-reader"></i>
+                        <i class="fa-solid fa-id-badge"></i>
                         <span>Profiles</span>
                     </a>
                 </li>
                 <li><a href="/admin/blogs">
-                        <i class="fa-solid fa-book-open-reader"></i>
+                        <i class="fa-solid fa-blog"></i>
                         <span>Blogs</span>
                     </a>
                 </li>
@@ -32,7 +32,7 @@
                     </a>
                 </li>
                 <li><a href="/admin/uploads">
-                        <i class="fa-solid fa-briefcase"></i>
+                        <i class="fa-solid fa-square-caret-up"></i>
                         <span>Uploads</span>
                     </a>
                 </li>

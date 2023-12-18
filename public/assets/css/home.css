@@ -16,6 +16,7 @@
     --bg-color-3 : #083847;
     --white: #ffffff;
     --black: #101b1e;
+    --danger: #bb0000;
 }
 
 * {
@@ -44,28 +45,45 @@ a {
     color: var(--color-1);
 }
 
-h2 a { 
-    color: var(--white);
-}
-p {
-    font-size: 16px;
-    line-height: 25px;
-    font-weight: normal;
-}
 
 
 h1 {
+    font-size: 5rem;
     margin-bottom: 2rem;
 }
-h3 {
+
+h2 {
     font-size: 4rem;
     text-transform: uppercase;
 }
 
+h3 {
+    font-size: 3rem;
+}
+
 h4 {
-    font-size: 2.5rem;
-    font-weight: bold;
-    text-transform: uppercase;
+    font-size: 2rem;
+}
+
+
+h4 a {
+    color: var(--white);
+}
+
+p {
+    font-size: 1.5rem;
+    line-height: 3rem;
+    font-weight: normal;
+    margin-bottom: 1rem;
+}
+
+p.subtitle {
+    padding: 5rem;
+}
+
+p.excerpt {
+    font-size: 1rem;
+    line-height: 2rem;
 }
 
 .wrapper {
@@ -108,9 +126,7 @@ h4 {
     text-align: center;
 }
 
-p.subtitle {
-    padding: 5rem;
-}
+
 
 .work-tile {
     display: flex;
@@ -344,16 +360,110 @@ nav a:hover {
 }
 
 .pocket .details{
-    
     padding: 1rem;
-}
-
-.pocket .details .time {
-    color: aqua;
-    padding: 1rem 0;
-    font-size: 0.8rem;
 }
 
 .blog-header {
     background-color: var(--bg-color-2);
+}
+
+.blog-single {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    gap: 3rem;
+    
+}
+
+.blog-main {
+    flex: 2;
+}
+
+.blog-side {
+    flex: 1;
+}
+
+p.date-time { 
+    margin: 0;
+    font-size: 0.8rem;
+    color: var(--color-1);
+}
+
+.blog-main img {
+    display: block;
+    margin: 3rem 0;
+}
+
+.blog-content p {   
+    font-size: 1.5rem;
+    line-height: 3rem;
+    font-weight: normal;
+    margin-bottom: 1rem;
+}
+.blog-content h2 {
+    margin-bottom: 2rem;
+    text-transform: none;
+}
+
+.blog-content h3 {
+    margin-bottom: 1rem;
+}
+
+.blog-side h4 {
+    margin-bottom: 1rem;
+}
+
+
+.blog-side p {   
+    font-size: 1rem;
+    line-height: 2rem;
+    font-weight: normal;
+    margin-bottom: 1rem;
+}
+
+
+.side-block {
+    margin-bottom: 3rem;
+}
+
+
+
+.author-image {
+    width: 6rem;
+    border-radius: 50%;
+    height: 6rem;
+    border: solid var(--color-1) 0.3rem;
+    margin: 1rem 0;
+}
+
+.tags {
+    overflow: auto;
+}
+
+.tag {
+    background-color: var(--color-1);
+    padding: 1rem 2rem;
+    margin: 0.3rem 0.3rem;
+    float: left;
+    color: var(--bg-color);
+    
+}
+
+.newsletter {
+    display: flex;
+    align-items: start;
+    justify-content:flex-start;
+}
+.newsletter input {
+    padding: 1rem;
+    display: block;
+    flex: 3;
+}
+
+.newsletter button {
+    display: block;
+    flex: 1;
+    border-radius: 0;
+    padding: 1rem;
+    background-color: var(--danger);
 }

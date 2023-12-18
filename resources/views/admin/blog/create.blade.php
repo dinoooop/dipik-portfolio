@@ -1,6 +1,13 @@
 @extends('layouts.sidenav')
 @section('title', 'Create Blog')
 
+@section('header')
+<link rel="stylesheet" href="{{ asset('assets/richtexteditor/rte_theme_default.css') }}" />
+<script type="text/javascript" src="{{ asset('assets/richtexteditor/rte.js') }}"></script>
+<script type="text/javascript" src="{{ asset('assets/richtexteditor/plugins/all_plugins.js') }}"></script>
+<script type="text/javascript" src="{{ asset('assets/rte-upload.js') }}"></script>
+@endsection
+
 @section('content')
 
 <h1>Create Blog</h1>
@@ -11,8 +18,18 @@
         <input name="title" type="text" id="title" />
     </div>
     <div class="form-group">
+        <!-- <label for="content">Content:</label>
+        <textarea name="content" id="content"></textarea> -->
+
         <label for="content">Content:</label>
-        <textarea name="content" id="content"></textarea>
+        <input name="content" id="inp_content" type="hidden" />
+        <div id="content_editor" class="richtexteditor" style="width: 100%; margin:0 auto;">
+        
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="excerpt">Excerpt:</label>
+        <textarea name="excerpt" id="excerpt"></textarea>
     </div>
     <div class="form-group">
         <label for="image">Image:</label>
@@ -26,4 +43,11 @@
     <button type="submit">Submit</button>
 </form>
 
+<script>
+    var editor1 = new RichTextEditor(document.getElementById("content_editor"));
+    
+    editor1.attachEvent("change", function() {
+        document.getElementById("inp_content").value = editor1.getHTMLCode();
+    });
+</script>
 @endsection

@@ -17,7 +17,6 @@
         <tr>
             <th>ID</th>
             <th>Title</th>
-            <th>Duration</th>
             <th>Action</th>
         </tr>
     </thead>
@@ -26,7 +25,6 @@
         <tr>
             <td>{{$model['id']}}</td>
             <td>{{$model['title']}}</td>
-            <td>{{$model['duration']}}</td>
             <td>
                 <a href="/admin/blogs/{{$model['id']}}/edit" class="btn"><i class="fas fa-edit"></i></a>
                 <button data-model-end-point="blogs" data-model-id="{{ $model->id }}" class="btn trash"><i class="fas fa-trash"></i></button>

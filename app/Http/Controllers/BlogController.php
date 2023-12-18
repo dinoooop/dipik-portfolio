@@ -13,8 +13,27 @@ class BlogController extends Controller
 
     public function index(Request $request)
     {
-        $data = Blog::all();
+        $data = Blog::orderBy('created_at', 'DESC')->get();
         return view('admin.blog.index', ['data' => $data]);
+    }
+
+    public function blogs(Request $request)
+    {
+        $data = Blog::where('status', 1)->orderBy('created_at', 'DESC')->get();
+        return view('blog.index', ['data' => $data]);
+    }
+
+    public function tags(Request $request)
+    {
+        // $tag = Tag::where('slug', $request->slug)->first();
+        // $data = Blog::where('status', 1)->orderBy('created_at', 'DESC')->get();
+        // return view('blog.index', ['data' => $data]);
+    }
+
+    public function single(Request $request)
+    {
+        $data = Blog::where('slug', $request->slug)->first();
+        return view('blog.single', ['data' => $data]);
     }
 
     public function edit($id)
@@ -33,6 +52,7 @@ class BlogController extends Controller
         $validated = $request->validate([
             'title' => 'required',
             'content' => 'sometimes',
+            'excerpt' => 'sometimes',
             'image' => 'sometimes',
             'status' => 'required',
         ]);
@@ -49,6 +69,7 @@ class BlogController extends Controller
         $validated = $request->validate([
             'title' => 'required',
             'content' => 'sometimes',
+            'excerpt' => 'sometimes',
             'image' => 'sometimes',
             'status' => 'required',
         ]);
@@ -56,7 +77,7 @@ class BlogController extends Controller
         $validated['slug'] = Str::slug($validated['title'], '-');
 
         $data = Blog::find($id)->update($validated);
-        return redirect('/admin/blogs');
+        return redirect('/admin/blogs/' . $id . '/edit');
     }
 
     public function destroy(Request $request, $id)
@@ -65,9 +86,5 @@ class BlogController extends Controller
         return response()->json($data);
     }
 
-    public function blogs(Request $request)
-    {
-        $data = Blog::all();
-        return view('blog.index', ['data' => $data]);
-    }
+    
 }

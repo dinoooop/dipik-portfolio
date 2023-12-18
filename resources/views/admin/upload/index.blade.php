@@ -16,7 +16,8 @@
     <thead>
         <tr>
             <th>ID</th>
-            <th>URL</th>
+            <th>Image</th>
+            <th>Url</th>
             <th>Action</th>
         </tr>
     </thead>
@@ -28,6 +29,7 @@
             <td>
                 <img src="{{asset('storage/uploads/' . $model['url'])}}" alt="" width="150">
             </td>
+            <td>{{asset('storage/uploads/' . $model['url'])}}</td>
             <td>
                 <a href="/admin/uploads/{{$model['id']}}/edit" class="btn"><i class="fas fa-edit"></i></a>
                 <button data-model-end-point="uploads" data-model-id="{{ $model->id }}" class="btn trash"><i class="fas fa-trash"></i></button>

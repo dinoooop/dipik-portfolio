@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Upload;
 use Illuminate\Support\Facades\Auth;
 
 /**
@@ -39,3 +40,25 @@ function gcuid()
 {
     return Auth::user()->id;
 }
+
+/**
+ * 
+ * 
+ * 
+ * get Image by id
+ */
+
+ function getImageById($id)
+ {
+    $image = Upload::find($id);
+    return url('storage/uploads/' . $image->url);
+ }
+
+ /**
+  * 
+  * Display Blog date format
+  */
+
+  function blogDateFormat($date){
+    return date('d M, Y', strtotime($date));
+  }

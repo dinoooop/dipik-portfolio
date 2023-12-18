@@ -7,60 +7,47 @@
     @include('templates.nav')
 </section>
 
-<section class="blogs" id="nav-stick-time">
-    <div class="wrapper">
+<section id="nav-stick-time">
+    <div class="wrapper blog-single">
 
-        <h1>Blogs</h1>
-
-        <div class="pockets">
-            <div class="pocket">
-                <div class="thumb">
-                    <a href="/sample">
-                    <img src="{{ asset('assets/images/helvetica.jpg') }}" alt="">
-                    </a>
-                </div>
-                <div class="details">
-                    <h2><a href="/sample">The Font, Helvetica </a></h2>
-                    <p class="time">Jun 26, 2023 | JS, Laravel</p>
-                    <p>Index funds have gained popularity in the world of investing, offering a simple and effective way for individuals to participate in the stock market.</p>
-                </div>
-            </div>
-            <div class="pocket">
-                <div class="thumb">
-                    <img src="{{ asset('assets/images/phone.jpg') }}" alt="">
-                </div>
-                <div class="details">
-                    <h2>Prestige, The show of the day.</h2>
-                    <p class="time">Jun 26, 2023 | JS, Laravel</p>
-                    <p>A sample assembly the investing, offering a simple and effective way for individuals to participate in the stock market.</p>
-                </div>
-
-            </div>
-            <div class="pocket">
-                <div class="thumb">
-                    <img src="{{ asset('assets/images/titanic-expedition-view.jpg') }}" alt="">
-                </div>
-                <div class="details">
-                    <h2>Submarine 2023 on board.</h2>
-                    <p class="time">Jun 26, 2023 | JS, Laravel</p>
-                    <p>A sample assembly the investing, offering a simple.</p>
-                </div>
-
-            </div>
-
-            <div class="pocket">
-                <div class="thumb">
-                    <img src="{{ asset('assets/images/zebra.jpg') }}" alt="">
-                </div>
-                <div class="details">
-                    <h2>Prestige, The show of the day.</h2>
-                    <p class="time">Jun 26, 2023 | JS, Laravel</p>
-                    <p>A sample assembly the investing, offering a simple and effective way for individuals to participate in the stock market.</p>
-                </div>
-
-            </div>
-
+        <div class="blog-main">
+            <h1>{{ $data['title'] }}</h1>
+            <p class="date-time">{{ blogDateFormat($data['updated_at']) }}</p>
+            <div class="blog-content"><?php echo $data->content ?></div>
         </div>
+
+        <div class="blog-side">
+
+            <div class="side-block">
+                <img src="{{ getImageById(3) }}" alt="author" class="author-image">
+                <h4>Author</h4>
+                <p> hoping for an excuse to make some more updates. Maybe a few of these pieces will scratch the itch!</p>
+            </div>
+
+            <div class="side-block">
+                <h4>Explore</h4>
+                <div class="tags">
+                    <div class="tag">JavaScript</div>
+                    <div class="tag">Laravel</div>
+                    <div class="tag">React</div>
+                    <div class="tag">PHP</div>
+                </div>
+            </div>
+
+            
+            <div class="side-block ">
+                <h4>Newsletter</h4>
+                <form action="">
+                    @csrf
+                    <div class="form-group newsletter">
+                        <input name="email" type="email" placeholder="Email" />
+                        <button class="subscribe">Subscribe</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
     </div>
 
 </section>

@@ -29,9 +29,13 @@ use App\Models\Upload;
 // });
 
 Route::get('/', [GeneralController::class, 'home']);
-Route::get('/blogs', [GeneralController::class, 'blogs']);
 Route::get('/test', [TestController::class, 'test']);
 Route::post('/contact', [GeneralController::class, 'contact']);
+
+Route::get('blogs', [BlogController::class, 'blogs']);
+Route::get('blogs/{slug}', [BlogController::class, 'single']);
+Route::get('tags/{slug}', [BlogController::class, 'tags']);
+
 
 Route::group(['middleware' => ['auth']], function () {
     Route::resource('admin/users', UserController::class);
@@ -41,8 +45,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('admin/uploads', UploadController::class);
     Route::resource('admin/profiles', ProfileController::class);
     Route::resource('admin/blogs', BlogController::class);
-    Route::get('blogs', [BlogController::class, 'blogs']);
-    Route::get('blogs/{slug}', [BlogController::class, 'single']);
     Route::get('/logout', [AuthController::class, 'logout']);
 
     Route::controller(GeneralController::class)->group(function () {

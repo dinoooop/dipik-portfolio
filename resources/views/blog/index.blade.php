@@ -7,58 +7,30 @@
     @include('templates.nav')
 </section>
 
-<section class="blogs" id="nav-stick-time">
+<section class="blog-single" id="nav-stick-time">
     <div class="wrapper">
 
         <h1>Blogs</h1>
 
+
         <div class="pockets">
+
+            @foreach($data as $key => $model)
             <div class="pocket">
                 <div class="thumb">
-                    <a href="/sample">
-                    <img src="{{ asset('assets/images/helvetica.jpg') }}" alt="">
+                    <a href="{{ url('blogs/' . $model['slug']) }}">
+                        <img src="{{ getImageById($model['image']) }}" alt="">
                     </a>
                 </div>
                 <div class="details">
-                    <h2><a href="the-font-helvetica">The Font, Helvetica</a></h2>
-                    <p class="time">Jun 26, 2023 | JS, Laravel</p>
-                    <p>Index funds have gained popularity in the world of investing, offering a simple and effective way for individuals to participate in the stock market.</p>
+                    <h4><a href="{{ url('blogs/' . $model['slug']) }}">{{ $model['title'] }}</a></h4>
+                    <p class="date-time">{{ blogDateFormat($model['updated_at']) }} | JS, Laravel</p>
+                    <p class="excerpt">{{ $model['excerpt'] }}</p>
                 </div>
             </div>
-            <div class="pocket">
-                <div class="thumb">
-                    <img src="{{ asset('assets/images/phone.jpg') }}" alt="">
-                </div>
-                <div class="details">
-                    <h2>Prestige, The show of the day.</h2>
-                    <p class="time">Jun 26, 2023 | JS, Laravel</p>
-                    <p>A sample assembly the investing, offering a simple and effective way for individuals to participate in the stock market.</p>
-                </div>
+            @endforeach
 
-            </div>
-            <div class="pocket">
-                <div class="thumb">
-                    <img src="{{ asset('assets/images/titanic-expedition-view.jpg') }}" alt="">
-                </div>
-                <div class="details">
-                    <h2>Submarine 2023 on board.</h2>
-                    <p class="time">Jun 26, 2023 | JS, Laravel</p>
-                    <p>A sample assembly the investing, offering a simple.</p>
-                </div>
-
-            </div>
-
-            <div class="pocket">
-                <div class="thumb">
-                    <img src="{{ asset('assets/images/zebra.jpg') }}" alt="">
-                </div>
-                <div class="details">
-                    <h2>Prestige, The show of the day.</h2>
-                    <p class="time">Jun 26, 2023 | JS, Laravel</p>
-                    <p>A sample assembly the investing, offering a simple and effective way for individuals to participate in the stock market.</p>
-                </div>
-
-            </div>
+            
 
         </div>
     </div>

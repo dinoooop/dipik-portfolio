@@ -17,15 +17,15 @@
 <section class="story artboard" id="nav-stick-time">
     <div class="wrapper" id="story">
         @if(isset($story->title))
-        <h3>{{ $story->title }}</h3>
-        <p class="subtitle"><?php echo $story->content; ?></p>
+        <h2>{{ $story->title }}</h2>
+        <p><?php echo $story->content; ?></p>
         @endif
         
     </div>
 </section>
 <section class="work bgtext artboard" id="work">
     <div class="wrapper">
-        <h3>Works</h3>
+        <h2>Works</h2>
         <p class="subtitle">Made with fun</p>
 
         <div class="work-tile">
@@ -37,7 +37,7 @@
 </section>
 <section class="experience artboard" id="experience">
     <div class="wrapper">
-        <h3>Experience</h3>
+        <h2>Experience</h2>
         <p class="subtitle">Listing my industrial connections</p>
 
         <div class="cards">
@@ -45,7 +45,7 @@
             <div class="card">
                 <div class="thumb">{{ $experience->duration }}</div>
                 <div class="details">
-                    <h4>{{ $experience->title }}</h4>
+                    <h3>{{ $experience->title }}</h3>
                     <p class="address">{{ $experience->address }}</p>
                     <p>{{ $experience->content }}</p>
                 </div>
@@ -58,7 +58,7 @@
 </section>
 <section class="contact artboard" id="contact">
     <div class="wrapper">
-        <h3>Contact</h3>
+        <h2>Contact</h2>
         <p class="subtitle">Lets do something together</p>
         <!-- https://formspree.io/f/moqbgwzj -->
         <form action="/contact" method="post">
