@@ -47,6 +47,11 @@
                         <span>Users</span>
                     </a>
                 </li>
+                <li><a href="/admin/tags">
+                        <i class="fa-solid fa-tag"></i>
+                        <span>Tags</span>
+                    </a>
+                </li>
                 <li>
                     <a href="/logout">
                         <i class="fa-solid fa-arrow-right-from-bracket"></i>

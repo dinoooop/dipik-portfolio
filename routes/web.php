@@ -11,7 +11,7 @@ use App\Http\Controllers\WorkController;
 use App\Http\Controllers\UploadController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\BlogController;
-use App\Models\Upload;
+use App\Http\Controllers\TagController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,7 +34,7 @@ Route::post('/contact', [GeneralController::class, 'contact']);
 
 Route::get('blogs', [BlogController::class, 'blogs']);
 Route::get('blogs/{slug}', [BlogController::class, 'single']);
-Route::get('tags/{slug}', [BlogController::class, 'tags']);
+Route::get('tags/{slug}', [TagController::class, 'home']);
 
 
 Route::group(['middleware' => ['auth']], function () {
@@ -45,6 +45,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('admin/uploads', UploadController::class);
     Route::resource('admin/profiles', ProfileController::class);
     Route::resource('admin/blogs', BlogController::class);
+    Route::resource('admin/tags', TagController::class);
     Route::get('/logout', [AuthController::class, 'logout']);
 
     Route::controller(GeneralController::class)->group(function () {

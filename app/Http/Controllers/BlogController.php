@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Blog;
+use App\Models\Tag;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -23,22 +24,17 @@ class BlogController extends Controller
         return view('blog.index', ['data' => $data]);
     }
 
-    public function tags(Request $request)
-    {
-        // $tag = Tag::where('slug', $request->slug)->first();
-        // $data = Blog::where('status', 1)->orderBy('created_at', 'DESC')->get();
-        // return view('blog.index', ['data' => $data]);
-    }
-
     public function single(Request $request)
     {
         $data = Blog::where('slug', $request->slug)->first();
-        return view('blog.single', ['data' => $data]);
+        $tags = Tag::all();
+        return view('blog.single', ['data' => $data, 'tags' => $tags]);
     }
 
     public function edit($id)
     {
         $data = Blog::find($id);
+        $data['tags'] = getBlogTagTitles($data);
         return view('admin.blog.edit', ['data' => $data]);
     }
 
@@ -55,12 +51,16 @@ class BlogController extends Controller
             'excerpt' => 'sometimes',
             'image' => 'sometimes',
             'status' => 'required',
+            'tags' => 'sometimes',
         ]);
 
         $validated['user_id'] = gcuid();
         $validated['slug'] = Str::slug($validated['title'], '-');
+        $tagIds = createTags($validated['tags']);
 
-        $data = Blog::create($validated);
+        $blog = Blog::create($validated);
+        $blog->tags()->attach($tagIds);
+
         return redirect('/admin/blogs');
     }
 
@@ -72,11 +72,16 @@ class BlogController extends Controller
             'excerpt' => 'sometimes',
             'image' => 'sometimes',
             'status' => 'required',
+            'tags' => 'sometimes',
         ]);
 
         $validated['slug'] = Str::slug($validated['title'], '-');
+        $tagIds = createTags($validated['tags']);
 
-        $data = Blog::find($id)->update($validated);
+        $blog = Blog::find($id);
+        $blog->update($validated);
+        $blog->tags()->sync($tagIds);
+        
         return redirect('/admin/blogs/' . $id . '/edit');
     }
 

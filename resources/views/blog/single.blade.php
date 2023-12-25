@@ -27,10 +27,11 @@
             <div class="side-block">
                 <h4>Explore</h4>
                 <div class="tags">
-                    <div class="tag">JavaScript</div>
-                    <div class="tag">Laravel</div>
-                    <div class="tag">React</div>
-                    <div class="tag">PHP</div>
+                    @foreach($tags as $key => $tag)
+                        <div class="tag">
+                            <a href="{{ url('tags/' . $tag->slug) }}">{{ $tag->title }}</a>
+                        </div>
+                    @endforeach
                 </div>
             </div>
 

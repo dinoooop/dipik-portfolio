@@ -86,6 +86,10 @@ p.excerpt {
     line-height: 2rem;
 }
 
+p.small {
+    font-size: 0.9rem;
+}
+
 .wrapper {
     width: 80vw;
     margin: 0 auto;
@@ -466,4 +470,8 @@ p.date-time {
     border-radius: 0;
     padding: 1rem;
     background-color: var(--danger);
+}
+
+.tag a {
+    color: var(--bg-color);
 }

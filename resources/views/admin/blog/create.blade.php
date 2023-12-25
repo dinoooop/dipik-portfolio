@@ -36,6 +36,10 @@
         <input name="image" type="text" id="image" />
     </div>
     <div class="form-group">
+        <label for="tags">Tags:</label>
+        <input name="tags" type="text" id="tags" />
+    </div>
+    <div class="form-group">
         <label for="status">Status:</label>
         <span><input name="status" type="radio" value="2" id="draft" checked /> <label for="draft">Draft</label></span>
         <span><input name="status" type="radio" value="1" id="publish" /> <label for="publish">Publish</label></span>
