@@ -61,7 +61,9 @@
 
 
 @media (max-width: 768px) {
-
+    .blog-side {
+        display: none;
+    }
     
 }
 
@@ -99,4 +101,6 @@
     .pocket {
         width: 90vw;
     }
+
+    
 }

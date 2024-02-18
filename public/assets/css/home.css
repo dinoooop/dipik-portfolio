@@ -45,10 +45,8 @@ a {
     color: var(--color-1);
 }
 
-
-
 h1 {
-    font-size: 5rem;
+    font-size: 4.5rem;
     margin-bottom: 2rem;
 }
 
@@ -64,7 +62,6 @@ h3 {
 h4 {
     font-size: 2rem;
 }
-
 
 h4 a {
     color: var(--white);
@@ -130,14 +127,11 @@ p.small {
     text-align: center;
 }
 
-
-
 .work-tile {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-
 }
 
 .tile {
@@ -151,7 +145,6 @@ p.small {
     text-align: center;
     color: black;
     font-weight: bold;
-
 }
 
 /* RIPPLE ---------------------------------*/
@@ -290,8 +283,8 @@ button:hover {
 }
 
 .address {
-    font-size: 1.5rem;
     margin: 0.5rem 0;
+    font-weight: bolder;
 }
 
 footer {
@@ -404,6 +397,7 @@ p.date-time {
     font-weight: normal;
     margin-bottom: 1rem;
 }
+
 .blog-content h2 {
     margin-bottom: 2rem;
     text-transform: none;
@@ -417,7 +411,6 @@ p.date-time {
     margin-bottom: 1rem;
 }
 
-
 .blog-side p {   
     font-size: 1rem;
     line-height: 2rem;
@@ -425,12 +418,9 @@ p.date-time {
     margin-bottom: 1rem;
 }
 
-
 .side-block {
     margin-bottom: 3rem;
 }
-
-
 
 .author-image {
     width: 6rem;
@@ -450,28 +440,26 @@ p.date-time {
     margin: 0.3rem 0.3rem;
     float: left;
     color: var(--bg-color);
-    
 }
 
-.newsletter {
-    display: flex;
-    align-items: start;
-    justify-content:flex-start;
-}
-.newsletter input {
-    padding: 1rem;
-    display: block;
-    flex: 3;
-}
-
-.newsletter button {
-    display: block;
-    flex: 1;
-    border-radius: 0;
-    padding: 1rem;
-    background-color: var(--danger);
-}
-
-.tag a {
+a.button-txt-bg {
     color: var(--bg-color);
+}
+
+.side-post-head {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    padding: 1rem;
+    font-weight:400;
+    color: var(--bg-color);
+    letter-spacing: 0.001rem;
+}
+
+.side-post {
+    background-color: var(--color-1);
+    padding: 0.3rem;
+}
+
+.side-post img {
+    width: 100%;
 }

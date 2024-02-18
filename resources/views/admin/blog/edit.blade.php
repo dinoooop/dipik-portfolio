@@ -40,9 +40,17 @@
         <input name="tags" type="text" value="{{ $data->tags }}" id="tags" />
     </div>
     <div class="form-group">
+        <label for="related">Related Post:</label>
+        <input name="related" type="number" value="{{ $data->related }}" id="related" />
+    </div>
+    <div class="form-group">
         <label for="status">Status:</label>
         <span><input name="status" type="radio" value="2" id="draft" {{ $data->status == 2 ? "checked" : "" }} /> <label for="draft">Draft</label></span>
         <span><input name="status" type="radio" value="1" id="publish" {{ $data->status == 1 ? "checked" : "" }} /> <label for="publish">Publish</label></span>
+    </div>
+    <div class="form-group">
+        <label for="is_featured">Set Featured:</label>
+        <span><input name="is_featured" type="checkbox" value="1" id="is_featured" {{ $data->is_featured == 1 ? "checked" : "" }} /> <label for="is_featured">A featured post</label></span>
     </div>
     <button type="submit">Submit</button>
 </form>

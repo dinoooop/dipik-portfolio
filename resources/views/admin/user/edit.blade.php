@@ -15,6 +15,10 @@
         <label for="email">Email:</label>
         <input name="email" type="email" id="email" value="{{$user->email}}"/>
     </div>
+    <div class="form-group">
+        <label for="abt_author">About Author:</label>
+        <textarea name="abt_author" id="abt_author">{{$user->abt_author}}</textarea>
+    </div>
     <button type="submit">Save</button>
 </form>
 @endsection

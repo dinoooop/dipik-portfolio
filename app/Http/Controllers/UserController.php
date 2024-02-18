@@ -34,7 +34,9 @@ class UserController extends Controller
         ]);
 
         $validated['password'] = Hash::make('welcome');
-        $user = User::create($validated);
+        
+        $merged = array_merge($validated, $request->all());
+        $user = User::create($merged);
         return redirect('/admin/users');
     }
 
@@ -45,7 +47,9 @@ class UserController extends Controller
             'email' => 'required|email|unique:users,email,' . $id,
         ]);
 
-        $user = User::find($id)->update($validated);
+        $merged = array_merge($validated, $request->all());
+
+        $user = User::find($id)->update($merged);
         return redirect('/admin/users/' . $id . '/edit');
     }
 }

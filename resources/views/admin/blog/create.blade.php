@@ -40,9 +40,18 @@
         <input name="tags" type="text" id="tags" />
     </div>
     <div class="form-group">
+        <label for="related">Related Post:</label>
+        <input name="related" type="number" id="related" />
+    </div>
+    <div class="form-group">
         <label for="status">Status:</label>
         <span><input name="status" type="radio" value="2" id="draft" checked /> <label for="draft">Draft</label></span>
         <span><input name="status" type="radio" value="1" id="publish" /> <label for="publish">Publish</label></span>
+    </div>
+
+    <div class="form-group">
+        <label for="is_featured">Set Featured:</label>
+        <span><input name="status" type="checkbox" value="1" checked /> <label for="draft">A featured post</label></span>
     </div>
     <button type="submit">Submit</button>
 </form>

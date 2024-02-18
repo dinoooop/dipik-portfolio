@@ -22,6 +22,8 @@ class Blog extends Model
         'slug',
         'image',
         'status',
+        'is_featured',
+        'related',
     ];
 
     public function tags(): BelongsToMany
